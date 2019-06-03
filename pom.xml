@@ -7,6 +7,10 @@
     <groupId>kaindorf.pos</groupId>
     <artifactId>ormapper</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.target>12</maven.compiler.target>
+        <maven.compiler.source>12</maven.compiler.source>
+    </properties>
 
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <dependencies>

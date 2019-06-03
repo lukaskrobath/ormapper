@@ -1,11 +1,14 @@
 package beans;
 
 import annotations.Entity;
+import annotations.PrimaryKey;
 
 @Entity
 public class Car {
-    private String brand;
+
+    @PrimaryKey
     private String licensePlate;
+    private String brand;
     private int horsePower;
     private Double price;
 

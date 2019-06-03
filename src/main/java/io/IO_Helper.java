@@ -1,6 +1,8 @@
 package io;
 
 import annotations.Entity;
+import database.DB_Access;
+import database.DB_Manager;
 
 
 import java.io.File;
@@ -8,6 +10,7 @@ import java.io.File;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +44,12 @@ public class IO_Helper {
 
     public static void main(String[] args) {
         Path dirPath = Paths.get(".", "src", "main", "java");
-        for (String str : getEntityClassnames(dirPath)
-        ) {
-            System.out.println(str);
+        DB_Access access = DB_Access.getInstance();
+        try {
+            DB_Manager man = new DB_Manager(getEntityClassnames(dirPath));
+        } catch (SQLException e) {
+            System.out.println(e.toString());
         }
+
     }
 }
